@@ -1,0 +1,37 @@
+plugins {
+    id "io.qameta.allure" version "2.8.1"
+    id 'java'
+}
+
+group 'org.task.disqo'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'io.qameta.allure', name: 'allure-testng', version: '2.8.1'
+    compile group: 'io.qameta.allure', name: 'allure-rest-assured', version: '2.8.1'
+    compile group: 'io.rest-assured', name: 'rest-assured', version: '4.1.2'
+    testCompile group: 'io.rest-assured', name: 'json-schema-validator', version: '4.1.2'
+    testCompile group: 'org.testng', name: 'testng', version: '6.14.3'
+}
+
+test {
+    useTestNG() {
+        suites 'src/test/resources/testng.xml'
+    }
+    ignoreFailures = true
+}
+
+allure {
+    autoconfigure = true
+    version = '2.8.1'
+    useTestNG {
+        version = '2.8.1'
+    }
+}
