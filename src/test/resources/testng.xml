@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="My suite" parallel="methods" thread-count="6">
+    <listeners>
+        <listener class-name="utils.TestListener"/>
+    </listeners>
     <test name="All">
         <packages>
             <package name="tests.*" />
