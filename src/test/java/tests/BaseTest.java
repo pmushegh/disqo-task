@@ -18,7 +18,7 @@ public class BaseTest {
 
     @BeforeSuite
     public void warmUp() throws FileNotFoundException {
-        RestAssured.baseURI = "https://gorest.co.in/public-api/users";
+        RestAssured.baseURI = "https://gorest.co.in/public-api";
         String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
         PrintStream fileOutPutStream = new PrintStream(new File( timeStamp + ".log"));
 
