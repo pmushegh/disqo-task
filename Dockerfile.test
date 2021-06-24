@@ -1,0 +1,11 @@
+#Dockerfile.test
+#Used for running unit and integration tests
+FROM adoptopenjdk/openjdk8-openj9:ubi
+
+RUN groupadd -g 1010 appuser && \
+    useradd --create-home -r -u 1010 -g appuser appuser
+
+USER appuser
+
+WORKDIR /home/appuser
+COPY --chown=appuser:appuser . /home/appuser

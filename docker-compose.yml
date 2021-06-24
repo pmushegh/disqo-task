@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  tests:
+    image: disqo_task
+    user: appuser
+    command: [
+        "sh",
+        "-c",
+        "./gradlew cleanTest test allureReport"
+    ]
+    build:
+      context: .
+      dockerfile: Dockerfile.test
