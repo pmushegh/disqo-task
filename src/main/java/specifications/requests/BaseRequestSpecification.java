@@ -14,6 +14,12 @@ public abstract class BaseRequestSpecification<T extends BaseRequestSpecificatio
     }
 
     @Step
+    public T addPageNumberQueryParam(Integer iPageNumber) {
+        requestSpecBuilder.addQueryParam("page", iPageNumber);
+        return self();
+    }
+
+    @Step
     public T setContentType(ContentType contentType) {
         requestSpecBuilder.setContentType(contentType);
         return self();
