@@ -1,2 +1,7 @@
-package utils;public class DBLog {
+package utils;
+
+public class DBLog {
+    public void info(String testName) {
+
+    }
 }

@@ -14,11 +14,16 @@ repositories {
 }
 
 dependencies {
-    compile group: 'io.qameta.allure', name: 'allure-testng', version: '2.10.0'
+    implementation group: 'com.amazonaws', name: 'aws-java-sdk-core', version: '1.12.11'
+    implementation group: 'com.amazonaws', name: 'aws-java-sdk-rds', version: '1.12.11'
+
     compile group: 'io.qameta.allure', name: 'allure-rest-assured', version: '2.10.0'
     compile group: 'io.rest-assured', name: 'rest-assured', version: '4.3.3'
     compile group: 'org.testng', name: 'testng', version: '6.14.3'
+
     testCompile group: 'io.rest-assured', name: 'json-schema-validator', version: '4.3.3'
+
+    runtime "mysql:mysql-connector-java:8.0.25"
 }
 
 test {
