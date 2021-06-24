@@ -1,7 +1,6 @@
 package pojos;
 
-public class Pagination
-{
+public class Pagination {
     private String total;
 
     private String pages;
@@ -10,49 +9,40 @@ public class Pagination
 
     private String page;
 
-    public String getTotal ()
-    {
+    public String getTotal () {
         return total;
     }
 
-    public void setTotal (String total)
-    {
+    public void setTotal (String total) {
         this.total = total;
     }
 
-    public String getPages ()
-    {
+    public String getPages () {
         return pages;
     }
 
-    public void setPages (String pages)
-    {
+    public void setPages (String pages) {
         this.pages = pages;
     }
 
-    public String getLimit ()
-    {
+    public String getLimit () {
         return limit;
     }
 
-    public void setLimit (String limit)
-    {
+    public void setLimit (String limit) {
         this.limit = limit;
     }
 
-    public String getPage ()
-    {
+    public String getPage () {
         return page;
     }
 
-    public void setPage (String page)
-    {
+    public void setPage (String page) {
         this.page = page;
     }
 
     @Override
-    public String toString()
-    {
-        return "ClassPojo [total = "+total+", pages = "+pages+", limit = "+limit+", page = "+page+"]";
+    public String toString () {
+        return "ClassPojo [total = " + total + ", pages = " + pages + ", limit = " + limit + ", page = " + page + "]";
     }
 }

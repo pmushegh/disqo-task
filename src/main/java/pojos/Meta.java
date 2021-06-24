@@ -1,22 +1,18 @@
 package pojos;
 
-public class Meta
-{
+public class Meta {
     private Pagination pagination;
 
-    public Pagination getPagination ()
-    {
+    public Pagination getPagination () {
         return pagination;
     }
 
-    public void setPagination (Pagination pagination)
-    {
+    public void setPagination (Pagination pagination) {
         this.pagination = pagination;
     }
 
     @Override
-    public String toString()
-    {
-        return "ClassPojo [pagination = "+pagination+"]";
+    public String toString () {
+        return "ClassPojo [pagination = " + pagination + "]";
     }
 }

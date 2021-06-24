@@ -1,7 +1,6 @@
 package pojos.categories;
 
-public class Data
-{
+public class Data {
     private String name;
 
     private String description;
@@ -10,49 +9,40 @@ public class Data
 
     private String status;
 
-    public String getName ()
-    {
+    public String getName () {
         return name;
     }
 
-    public void setName (String name)
-    {
+    public void setName (String name) {
         this.name = name;
     }
 
-    public String getDescription ()
-    {
+    public String getDescription () {
         return description;
     }
 
-    public void setDescription (String description)
-    {
+    public void setDescription (String description) {
         this.description = description;
     }
 
-    public String getId ()
-    {
+    public String getId () {
         return id;
     }
 
-    public void setId (String id)
-    {
+    public void setId (String id) {
         this.id = id;
     }
 
-    public String getStatus ()
-    {
+    public String getStatus () {
         return status;
     }
 
-    public void setStatus (String status)
-    {
+    public void setStatus (String status) {
         this.status = status;
     }
 
     @Override
-    public String toString()
-    {
-        return "ClassPojo [name = "+name+", description = "+description+", id = "+id+", status = "+status+"]";
+    public String toString () {
+        return "ClassPojo [name = " + name + ", description = " + description + ", id = " + id + ", status = " + status + "]";
     }
 }
