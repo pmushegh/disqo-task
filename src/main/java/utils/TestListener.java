@@ -6,23 +6,26 @@ import org.testng.ITestResult;
 
 public class TestListener implements ITestListener {
 
+    private static String SUITE_NAME;
+
     @Override
     public void onTestStart(ITestResult iTestResult) {
-
     }
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-
+        DBLog.pass(SUITE_NAME, iTestResult.getTestName());
     }
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
+        DBLog.fail(SUITE_NAME, iTestResult.getTestName());
 
     }
 
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
+        DBLog.skip(SUITE_NAME, iTestResult.getTestName());
 
     }
 
@@ -33,7 +36,7 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onStart(ITestContext iTestContext) {
-
+        SUITE_NAME = iTestContext.getSuite().getName();
     }
 
     @Override

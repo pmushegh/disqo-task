@@ -6,7 +6,9 @@ import io.restassured.filter.log.ErrorLoggingFilter;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import utils.DBLog;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -24,5 +26,13 @@ public class BaseTest {
 
         RestAssured.filters(new AllureRestAssured(), new RequestLoggingFilter(LogDetail.ALL, fileOutPutStream),
                 new ResponseLoggingFilter(LogDetail.ALL, fileOutPutStream), new ErrorLoggingFilter(fileOutPutStream));
+        RestAssured.useRelaxedHTTPSValidation();
+
+        DBLog.initDBConnection();
+    }
+
+    @AfterSuite
+    public void tearDown() throws Exception {
+        DBLog.stopDBConnection();
     }
 }

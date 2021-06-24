@@ -24,10 +24,10 @@ public class AwsRdsUtils {
     private static final String AWS_SECRET_KEY = creds.getCredentials().getAWSSecretKey();
 
     //Configuration parameters for the generation of the IAM Database Authentication token
-    private static final String RDS_INSTANCE_HOSTNAME =  System.getProperty("RDS_INSTANCE_HOSTNAME");
-    private static final int RDS_INSTANCE_PORT = Integer.parseInt(System.getProperty("RDS_INSTANCE_PORT"));
-    private static final String REGION_NAME = System.getProperty("REGION_NAME");
-    private static final String DB_USER = System.getProperty("DB_USER");
+    private static final String RDS_INSTANCE_HOSTNAME =  System.getenv("RDS_INSTANCE_HOSTNAME");
+    private static final int RDS_INSTANCE_PORT =  Integer.parseInt(System.getenv("RDS_INSTANCE_PORT"));
+    private static final String REGION_NAME = System.getenv("REGION_NAME");
+    private static final String DB_USER = System.getenv("DB_USER");
     private static final String JDBC_URL = "jdbc:mysql://" + RDS_INSTANCE_HOSTNAME + ":" + RDS_INSTANCE_PORT;
 
     private static final String SSL_CERTIFICATE = "src\\main\\resources\\us-east-2-bundle.pem".replace('\\', File.separatorChar);
@@ -43,7 +43,7 @@ public class AwsRdsUtils {
      * @return
      * @throws Exception
      */
-    private static Connection getDBConnectionUsingIam() throws Exception {
+    public static Connection getDBConnectionUsingIam() throws Exception {
         setSslProperties();
         return DriverManager.getConnection(JDBC_URL, setMySqlConnectionProperties());
     }
@@ -134,7 +134,7 @@ public class AwsRdsUtils {
      * This method clears the SSL properties.
      * @throws Exception
      */
-    private static void clearSslProperties() throws Exception {
+    public static void clearSslProperties() throws Exception {
         System.clearProperty("javax.net.ssl.trustStore");
         System.clearProperty("javax.net.ssl.trustStoreType");
         System.clearProperty("javax.net.ssl.trustStorePassword");
