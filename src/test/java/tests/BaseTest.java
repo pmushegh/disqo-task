@@ -22,7 +22,8 @@ public class BaseTest {
     public void warmUp() throws FileNotFoundException {
         RestAssured.baseURI = "https://gorest.co.in/public-api";
         String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-        PrintStream fileOutPutStream = new PrintStream(new File( timeStamp + ".log"));
+        File logFile = new File(  "logs\\restassured\\".replace('\\', File.separatorChar) +timeStamp + ".log");
+        PrintStream fileOutPutStream = new PrintStream(logFile);
 
         RestAssured.filters(new AllureRestAssured(), new RequestLoggingFilter(LogDetail.ALL, fileOutPutStream),
                 new ResponseLoggingFilter(LogDetail.ALL, fileOutPutStream), new ErrorLoggingFilter(fileOutPutStream));
