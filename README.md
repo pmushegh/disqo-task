@@ -20,7 +20,7 @@ Contain tests for DISQO task
 Allure report generated in `build/reports/allure-report/` folder
 
 #### REST Assured log
-`<time_stamp>.log`
+`logs\restassured\<time_stamp>.log`
 
 ## Load (JMeter) tests
 ### CMD
