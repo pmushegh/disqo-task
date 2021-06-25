@@ -1,8 +1,8 @@
-# rest_assured
+# DISQO Task
 
-REST Assured - API Testing Tool course task repository
+Contain tests for DISQO task
 
-## Running
+## Running on localhost
 ### GitBash
 
 `./gradlew cleanTest test allureReport`
@@ -10,6 +10,10 @@ REST Assured - API Testing Tool course task repository
 ### CMD
 
 `gradlew.bat cleanTest test allureReport`
+
+## Running in docker
+
+`docker-compose up --build --abort-on-container-exit`
 
 ### Allure report
 Allure report generated in `build/reports/allure-report/ `folder
