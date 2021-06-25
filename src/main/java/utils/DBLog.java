@@ -26,18 +26,18 @@ public class DBLog {
     }
 
     public static void pass(String suite,String testName) {
-        writeLog(suite, testName, PassStatus.PASS);
+        writeLog(suite, testName, TestStatus.PASS);
     }
 
     public static void fail(String suite,String testName) {
-        writeLog(suite, testName, PassStatus.FAIL);
+        writeLog(suite, testName, TestStatus.FAIL);
     }
 
     public static void skip(String suite,String testName) {
-        writeLog(suite, testName, PassStatus.SKIP);
+        writeLog(suite, testName, TestStatus.SKIP);
     }
 
-    private static void writeLog(String suite, String testName, PassStatus status) {
+    private static void writeLog(String suite, String testName, TestStatus status) {
         try {
             Statement stmt = null;
             stmt = connection.createStatement();
@@ -48,10 +48,10 @@ public class DBLog {
                     "`run_result`,\n" +
                     "`date`)" +
                     "VALUES\n" +
-                    "(`" + suite + "`,\n" +
-                    "`" + testName + "`,\n" +
-                    "`" + status.toString() + "`,\n" +
-                    "`" +  new Timestamp(System.currentTimeMillis()) + "`);");
+                    "('" + suite + "',\n" +
+                    "'" + testName + "',\n" +
+                    "'" + status.toString() + "',\n" +
+                    "'" +  new Timestamp(System.currentTimeMillis()) + "');");
             stmt.executeBatch();
             stmt.close();
         } catch (Exception throwables) {

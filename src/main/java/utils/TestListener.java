@@ -14,7 +14,7 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-        DBLog.pass(SUITE_NAME, iTestResult.getTestName());
+        DBLog.pass(SUITE_NAME, getTestMethodName(iTestResult));
     }
 
     @Override
