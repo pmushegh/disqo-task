@@ -24,4 +24,4 @@ Allure report generated in `build/reports/allure-report/` folder
 
 ## Load (JMeter) tests
 ### CMD
-`jmeter -n -t "jmeter/DISQO Task load test.jmx" -l load_test_results.log`
+`jmeter -n -t "jmeter/DISQO Task load test.jmx" -l logs\jmeter\load_test_results.log`
