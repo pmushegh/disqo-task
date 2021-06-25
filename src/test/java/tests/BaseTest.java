@@ -29,7 +29,11 @@ public class BaseTest {
                 new ResponseLoggingFilter(LogDetail.ALL, fileOutPutStream), new ErrorLoggingFilter(fileOutPutStream));
         RestAssured.useRelaxedHTTPSValidation();
 
-        DBLog.initDBConnection();
+        try {
+            DBLog.initDBConnection();
+        } catch (ExceptionInInitializerError e) {
+            e.printStackTrace();
+        }
     }
 
     @AfterSuite

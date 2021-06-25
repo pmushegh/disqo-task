@@ -19,10 +19,10 @@ public class DBLog {
     public static void stopDBConnection() throws Exception {
         try {
             connection.close();
+            AwsRdsUtils.clearSslProperties();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        AwsRdsUtils.clearSslProperties();
     }
 
     public static void pass(String suite,String testName) {
