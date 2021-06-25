@@ -2,21 +2,26 @@
 
 Contain tests for DISQO task
 
-## Running on localhost
-### GitBash
+## Functional tests
+### Running on localhost
+#### GitBash
 
 `./gradlew cleanTest test allureReport`
 
-### CMD
+#### CMD
 
 `gradlew.bat cleanTest test allureReport`
 
-## Running in docker
+### Running in docker
 
 `docker-compose up --build --abort-on-container-exit`
 
-### Allure report
-Allure report generated in `build/reports/allure-report/ `folder
+#### Allure report
+Allure report generated in `build/reports/allure-report/` folder
 
-### REST Assured log
+#### REST Assured log
 `<time_stamp>.log`
+
+## Load (JMeter) tests
+### CMD
+`jmeter -n -t "jmeter/DISQO Task load test.jmx" -l load_test_results.log`
